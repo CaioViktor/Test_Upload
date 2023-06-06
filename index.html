@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <title>Teste</title>
+    </head>
+    <body>
+        <div id="data">
+
+        </div>
+    </body>
+    <footer>
+        <script>
+            const data = d3.json("data.json").then(function(data){
+                $("#data").text(data.data);
+                return data;
+            });
+        </script>
+    </footer>
+</html>
