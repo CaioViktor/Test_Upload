@@ -8,14 +8,22 @@
         <title>Teste</title>
     </head>
     <body>
-        <div id="data">
+        <div id="data" style="border: 1px solid black;">
 
         </div>
     </body>
     <footer>
         <script>
             const data = d3.json("data.json").then(function(data){
-                $("#data").text(data.data);
+                content = "<table><thead><tr><th>campo</th><th>valor</th></tr></thead>";
+                content+="<tbody>";
+                content+="<tr>";
+                content+="<td>Data:</td>"
+                content+="<td>"+data.data+"</td>";
+                content+="</tr>";
+                content+="</tbody>";
+                content+="</table>"
+                $("#data").append(content);
                 return data;
             });
         </script>
